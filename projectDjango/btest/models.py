@@ -6,6 +6,3 @@ class Chanells(models.Model):
   price = models.FloatField(null=True, blank=True)
   published = models.DateTimeField(auto_now_add=True, db_index=True)
 
-from btest.models import Chanells
-b1 = Chanells(title='Россия 1', content='Телеканал «Россия 1» — это информационно-развлекательный телеканал, флагман ВГТРК.')
-
