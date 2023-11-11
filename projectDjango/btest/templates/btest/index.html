@@ -27,6 +27,16 @@
         <p>{{ bb.content }}</p>
 	</div>
 	{% endfor %}
+    {% for tv_show in tv_shows %}
+    <div>
+        <h2>{{ tv_show.title }}</h2>
+        <p>{{ tv_show.content }}</p>
+        <p>{{ tv_show.type }}</p>
+        <p>{{ tv_show.chanell }}</p>
+        <p>{{ tv_show.timestart }}</p>
+        <p>{{ tv_show.timeend }}</p>
+	</div>
+	{% endfor %}
 </body>
 </html>
 
