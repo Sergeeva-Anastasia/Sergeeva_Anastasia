@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<title>Главная - Телепрограмма</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+	<title>Главная - Телепрограмма</title>
+    <style>
+        h1{
+         color: rgb(7, 7, 7);
+         font-family: "Times New Roman", Georgia, Serif;
+         background-color: rgb(162, 207, 239);
+        }
+        h2{
+        color: rgb(0, 0, 0)
+        }
+    </style> 
+</head>
+<body>
+	<h1><center><b>Телепрограмма на сегодня</b></center></h1>
+    {% for bb in bbs %}
+    <div>
+        <h2>{{ bb.title }}</h2>
+        <p>{{ bb.content }}</p>
+	</div>
+	{% endfor %}
+</body>
+</html>
+
