@@ -24,7 +24,7 @@ class TVShows(models.Model):
 
 class Type(models.Model):
   title = models.CharField(max_length=30, verbose_name='Название типа передачи')
-  content = models.IntegerField(null=True, blank=True, verbose_name='Возрастной ценз')
+  content = models.CharField(max_length=30, verbose_name='Возрастной ценз')
 
   class Meta:
     verbose_name_plural = 'Типы передач'

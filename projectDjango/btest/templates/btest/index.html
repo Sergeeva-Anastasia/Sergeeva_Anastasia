@@ -14,8 +14,10 @@
          font-family: "Times New Roman", Georgia, Serif;
          background-color: rgb(162, 207, 239);
         }
-        h2{
-        color: rgb(0, 0, 0)
+        h4{
+         color: rgb(7, 7, 7);
+         font-family: "Times New Roman", Georgia, Serif;
+         background-color: rgb(162, 207, 239);
         }
     </style> 
 </head>
@@ -23,20 +25,26 @@
 	<h1><center><b>Телепрограмма на сегодня</b></center></h1>
     {% for bb in bbs %}
     <div>
-        <h2>{{ bb.title }}</h2>
+        <h3>{{ bb.title }}</h3>
         <p>{{ bb.content }}</p>
 	</div>
 	{% endfor %}
+    <h4><b>Перечень типов передач:</b></h4>
+    {% for type_show in type_shows %}
+    <div>
+        <h5>{{ type_show.title }}</h5>
+        <p>{{ type_show.content }}</p>
+	</div>
+	{% endfor %}
+    <h4><b>Передачи:</b></h4>
     {% for tv_show in tv_shows %}
     <div>
-        <h2>{{ tv_show.title }}</h2>
+        <h5>{{ tv_show.title }}</h5>
         <p>{{ tv_show.content }}</p>
-        <p>{{ tv_show.type }}</p>
+        <p><u>{{ tv_show.type }}</u></p>
         <p>{{ tv_show.chanell }}</p>
-        <p>{{ tv_show.timestart }}</p>
-        <p>{{ tv_show.timeend }}</p>
+        <p>{{ tv_show.timestart }} {{'-'}} {{ tv_show.timeend }}</p>
 	</div>
 	{% endfor %}
 </body>
 </html>
-
