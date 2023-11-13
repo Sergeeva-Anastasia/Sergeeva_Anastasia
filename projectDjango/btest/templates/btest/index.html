@@ -23,20 +23,24 @@
 </head>
 <body>
 	<h1><center><b>Телепрограмма на сегодня</b></center></h1>
-    {% for bb in bbs %}
-    <div>
-        <h3>{{ bb.title }}</h3>
-        <p>{{ bb.content }}</p>
-	</div>
-	{% endfor %}
-    <h4><b>Перечень типов передач:</b></h4>
     {% for type_show in type_shows %}
     <div>
-        <h5>{{ type_show.title }}</h5>
+        <h4><b>{{ type_show.title }}</b></h4>
         <p>{{ type_show.content }}</p>
 	</div>
-	{% endfor %}
-    <h4><b>Передачи:</b></h4>
+    <ol>
+    {% for tv_show in tv_shows %}
+    {% if tv_show.type == type_show.title %}
+    <li>
+    <div>
+        <h6>{{ tv_show.title }}</h6>
+	</div>
+    </li>
+    {% endif %}
+    {% endfor %}
+    </ol>
+    {% endfor %}
+    <h1><center><b>Подробная информация о передачах:</b></center></h1>
     {% for tv_show in tv_shows %}
     <div>
         <h5>{{ tv_show.title }}</h5>
@@ -44,7 +48,7 @@
         <p><u>{{ tv_show.type }}</u></p>
         <p>{{ tv_show.chanell }}</p>
         <p>{{ tv_show.timestart }} {{'-'}} {{ tv_show.timeend }}</p>
-	</div>
-	{% endfor %}
+    </div>
+    {% endfor %}
 </body>
 </html>
